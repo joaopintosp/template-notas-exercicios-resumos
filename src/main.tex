@@ -1,0 +1,79 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage[portuguese]{babel}
+\usepackage{comment} % enables the use of multi-line comments (\ifx \fi)
+\usepackage{fullpage} % changes the margin
+\usepackage[a4paper, total={7in, 10in}]{geometry}
+\usepackage{amsmath,mathtools}
+\usepackage{amssymb,amsthm}  % assumes amsmath package installed
+\usepackage{float}
+\usepackage{graphicx}
+\graphicspath{{imagens/}}
+\usepackage{xcolor}
+\usepackage{mdframed}
+\usepackage[shortlabels]{enumitem}
+\usepackage{indentfirst,setspace}
+\usepackage{hyperref}
+\usepackage{pgfplots,tikz, pgfplotstable}
+\pgfplotsset{compat=1.18, width=10cm}
+\usetikzlibrary{positioning, arrows.meta, automata}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=blue!70!red,
+    pdftitle={Exame}, %%%%%%   WRITE ASSIGNMENT PDF NAME %%%%%%%%
+    pdfborder=0 0 0
+}
+\usepackage[most,many,breakable]{tcolorbox}
+
+\definecolor{mytheorembg}{HTML}{F2F2F9}
+\definecolor{mytheoremfr}{HTML}{00007B}
+
+\tcbuselibrary{theorems,skins,hooks}
+\newtcbtheorem{exercicio}{Exercício}
+{%
+    enhanced,
+    breakable,
+    colback = mytheorembg,
+    frame hidden,
+    boxrule = 0sp,
+    borderline west = {2pt}{0pt}{mytheoremfr},
+    sharp corners,
+    detach title,
+    before upper = \tcbtitle\par\smallskip,
+    coltitle = mytheoremfr,
+    fonttitle = \bfseries\sffamily,
+    description font = \mdseries,
+    separator sign none,
+    segmentation style={solid, mytheoremfr},
+}
+{p}
+
+% To give references for any problem use like this
+% suppose the problem number is p3 then 2 options either
+% \hyperref[p:p3]{<text you want to use to hyperlink> \ref{p:p3}}
+%                  or directly
+%                   \ref{p:p3}
+
+\input{structure/letterfonts}
+\input{structure/macros}
+\setlength{\parindent}{0pt}
+\onehalfspacing
+\setlength{\parskip}{6pt}
+
+\usepackage[style=apa]{biblatex}
+\addbibresource{main.bib}
+
+\begin{document}
+
+    \textsf{\noindent \large\textbf{Nome do Autor} \hfill \textbf{Título do Documento}\\
+    E-mail: E-mail do Autor %\href{https://sigarra.up.pt/feup/pt/fest_geral.cursos_list?pv_num_unico=201906772}{up201906772@up.pt}
+    \hfill Curso: Sigla do Curso\\
+    \normalsize UC: Nome da Cadeira \hfill Data: \today}
+
+    \input{sections/section1}
+    
+    %\nocite{*}
+    %\printbibliography
+
+\end{document}
