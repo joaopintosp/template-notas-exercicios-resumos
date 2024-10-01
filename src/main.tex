@@ -61,6 +61,12 @@
 \onehalfspacing
 \setlength{\parskip}{6pt}
 
+\usepackage[explicit,compact]{titlesec}
+\titleformat{\chapter}[block]
+{\bfseries\huge}{\filright\huge\thechapter.}{1ex}{\huge\filright #1}
+\titlespacing*{\chapter}{0pt}{-30pt}{30pt}
+\titlelabel{\thetitle.\quad}
+
 \usepackage[style=apa]{biblatex}
 \addbibresource{main.bib}
 
